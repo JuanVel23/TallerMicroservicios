@@ -17,11 +17,15 @@ spring:
           uri: lb://checkout-service
           predicates:
             - Path=/api/checkout/**
-      
+          filters:
+            - AddRequestHeader=x-request-from,gateway
+          
        - id: products-service
          uri: lb://products-service
          predicates:
           - Path=/api/products/**
+        filters:
+          - AddRequestHeader=x-request-from,gateway
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
