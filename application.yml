@@ -17,7 +17,11 @@ spring:
           uri: lb://checkout-service
           predicates:
             - Path=/api/checkout/**
-
+      
+       - id: products-service
+         uri: lb://products-service
+         predicates:
+          - Path=/api/products/**
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
