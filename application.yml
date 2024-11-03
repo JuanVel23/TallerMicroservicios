@@ -13,6 +13,6 @@ spring:
     gateway:
       routes:
        - id: checkout-service
-         uri: lb://checkout-service
-         predicates:
+       - uri: lb://checkout-service
+       - predicates:
           - Path=/api/checkout/**
