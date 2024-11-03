@@ -13,7 +13,7 @@ spring:
 cloud:
  gateway:
   routes:
-   -Id: checkout-service
+   - Id: checkout-service
    uri: lb://checkout-service
    predicates:
-     -Path=/api/checkout
+     - Path=/api/checkout
