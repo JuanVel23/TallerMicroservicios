@@ -17,3 +17,8 @@ spring:
           uri: lb://checkout-service
           predicates:
             - Path=/api/checkout/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
